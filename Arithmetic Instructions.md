@@ -58,6 +58,24 @@ MOV 50H, A
 END
 ```
 
+## Program for reversing the elements of an array
+### Code
+```Assembly
+ORG 0000H
+MOV R0, #50H
+MOV R1, #74H
+MOV R2, #10D
+NEXT: MOV A, @R0
+MOV @R1, A
+INC R0
+DEC R1
+DJNZ R2, NEXT
+END
+```
+
+
+
+
 
 
 
