@@ -39,7 +39,7 @@ MOV 50H, A
 END
 ```
 
-### Subtraction of two 32 bit numbers
+## Subtraction of two 32 bit numbers
 ### Code
 ``` Assembly
 ORG 0000H
