@@ -39,5 +39,26 @@ MOV 50H, A
 END
 ```
 
+### Subtraction of two 32 bit numbers
+### Code
+``` Assembly
+ORG 0000H
+MOV A, #01H
+SUBB A, #0EEH
+MOV 53H, A
+MOV A, #00H
+SUBB A, #0EEH
+MOV 52H, A
+MOV A, #00H
+SUBB A, #0EEH
+MOV 51H, A
+MOV A, #10H
+SUBB A, #0FH
+MOV 50H, A
+END
+```
+
+
+
 
 
