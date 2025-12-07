@@ -119,6 +119,28 @@ MOV R4, A
 END
 ```
 
+## Program for Mul,Div and DAA of two numbers
+### Code
+```Assembly
+ORG 0000H
+MOV A,#05H
+MOV B,#03H
+MUL AB
+MOV R0,A
+MOV R1,B
+MOV A,#0CH
+MOV B,#04H
+DIV AB
+MOV R2,A
+MOV R3,A
+MOV A,#25H
+ADD A,#0AAH
+DA A
+MOV R4,A
+END
+```
+
+
 
 
 
