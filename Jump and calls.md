@@ -40,7 +40,7 @@ movx a,@dptr
 mov r0,a            ;r0=04h
 again: inc dptr
 movx a,@dptr
-mov r7,a; r7=13h
+mov r7,a            ;r7=13h
 lcall checkbcd      ;SP,PC
 jnb 00h,next
 inc r1
