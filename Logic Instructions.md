@@ -33,4 +33,6 @@ SUBB A, R3
 MOV R4, A
 END
 ```
+## To transfer the LSB Of 4 memory locations starting from 0f00H in the code memory in lower nibble of R0. Mask of the upper nibble of R0 by ones.
+### Code
 
