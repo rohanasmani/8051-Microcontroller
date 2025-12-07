@@ -35,4 +35,39 @@ END
 ```
 ## To transfer the LSB Of 4 memory locations starting from 0f00H in the code memory in lower nibble of R0. Mask of the upper nibble of R0 by ones.
 ### Code
+```Assembly
+ORG 0000H
+MOV DPTR,#0F00H
+MOV R0,#00H
+MOVX A,@DPTR
+RRC A
+MOV A,#00H
+MOV ACC.3,C
+MOV R0,A
+INC DPTR
+CLR C
+MOVX A,@DPTR
+RRC A
+MOV A,#00H
+MOV ACC.2,C
+INC DPTR
+ORL A,R0
+MOV R0,A
+CLR C
+MOVX A,@DPTR
+RRC A
+MOV A,#00H
+MOV ACC.1,C
+INC DPTR
+ORL A,R0
+MOV R0,A
+CLR C
+MOVX A,@DPTR
+RRC A
+MOV ACC.0,C
+ORL A,R0
+ORL A,#0F0H
+MOV R0,A
+END
+```
 
