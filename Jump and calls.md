@@ -102,6 +102,32 @@ sjmp clearone
 end
 ```
 ### An array of BCD numbers starts from 4001h in memory. End of the array is detected by a non-BCD number. Count the number of elements in array. 
+```Assembly
+mov r1,#00h
+mov dptr,#4001h
+again: movx a,@dptr
+mov r7,a
+lcall checkbcd
+inc dptr
+jb 00h,again
+same: sjmp same
+checkbcd: clr 00h
+mov a,r7
+anl a,#0fh
+cjne a,#09h,lowhigh
+sjmp limit
+lowhigh: jnc back
+limit: mov a,r7
+anl a,#09h,final
+setone: setb 00h
+inc r1
+back: ret
+final: jnc back
+sjmp setone
+end
+```
+
+
 
 
 
