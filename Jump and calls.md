@@ -101,6 +101,7 @@ final: jnc back
 sjmp clearone
 end
 ```
+### An array of BCD numbers starts from 4001h in memory. End of the array is detected by a non-BCD number. Count the number of elements in array. 
 
 
 
