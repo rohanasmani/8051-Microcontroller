@@ -127,6 +127,28 @@ sjmp setone
 end
 ```
 
+### Program to transfer 10 bytes from external RAM location 30H onwards to 300H onwards
+```Assembly
+ORG 0000H
+MOV DPTR,#0030H
+MOV R2,#10
+MOV R3,#00H
+MOV R4,#03H
+TRANSFER: MOVX A,@DPTR
+MOV R5,DPL
+MOV R6,DPH
+MOV DPL,R3
+MOV DPH,R4
+INC R3
+MOVX @DPTR,R4
+MOV DPL,R5
+MOV DPH,R6
+INC DPTR
+DJNZ R2,TRANSFER
+```
+
+
+
 
 
 
