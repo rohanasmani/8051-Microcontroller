@@ -147,6 +147,21 @@ INC DPTR
 DJNZ R2,TRANSFER
 ```
 
+### Program to transfer 10 bytes from internal RAM 30H onwards to external RAM 30H onwards
+``` Assembly
+ORG 0000H            
+MOV R0, #30H         
+MOV DPTR, #30H       
+MOV R2, #10
+TRANSFER: MOV A, @R0        
+INC R0            
+MOVX @DPTR, A     
+INC DPTR          
+DJNZ R2, TRANSFER 
+END
+```
+
+
 
 
 
