@@ -160,7 +160,26 @@ INC DPTR
 DJNZ R2, TRANSFER 
 END
 ```
-
+### Program usig procedure to find the number of one in DPTR
+``` Assembly
+ORG 0000H
+MOV DPL, 50H
+MOV DPH, 51H
+MOV R0, #08
+MOV R1, #00H
+PARITY: MOV A, DPH
+ACALL CAL
+MOV R0, #08
+MOV A, DPL
+ACALL CAL
+MOV A, R1
+SKIP: SJMP SKIP
+CAL: RLC A
+JNC FURTHER
+INC R1
+FURTHER: DJNZ R0, CAL
+RET
+```
 
 
 
