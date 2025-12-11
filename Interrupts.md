@@ -26,6 +26,7 @@ cpl p1.0
 sjmp here1 
 end
 ```
+![image](https://github.com/user-attachments/assets/5e4c16c6-a9a5-4300-aad8-5a75b54f9c68)
 ## Every time you push the button the accumulator is incremented by one and the content is transferred to an external memory location
 ### Code
 ``` Assembly
