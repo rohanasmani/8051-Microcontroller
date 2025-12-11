@@ -62,3 +62,22 @@ end
 ### Output
 ![image](https://github.com/user-attachments/assets/f166b603-b795-4ef3-9118-b860f34926f9)
 
+## Count external pulses applied to Timer 1 input T1 (P3.5 pin). Display continuously the count on P2 (LSByte) and P1 (MSByte).
+### Code
+``` Assembly
+ORG 0000H
+MOV TMOD, #50H
+MOV TL1, #00H
+MOV TH1, #00H
+MOV P2, #00H
+MOV P1, #00H
+SETB P3.5
+SETB TR1
+AGAIN: MOV P2, TL1
+MOV P1, TH1
+SJMP AGAIN
+END
+```
+### Output
+![image](https://github.com/user-attachments/assets/5e048e9e-ebbc-49dd-bc63-7bcab8b7bf96)
+
