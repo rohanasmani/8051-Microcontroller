@@ -78,6 +78,3 @@ MOV P1, TH1
 SJMP AGAIN
 END
 ```
-### Output
-![image](https://github.com/user-attachments/assets/5e048e9e-ebbc-49dd-bc63-7bcab8b7bf96)
-
