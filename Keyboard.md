@@ -46,6 +46,7 @@ CONTINUE: MOV P3, A
 SJMP START
 end
 ```
+![image](https://github.com/user-attachments/assets/0840b9cf-ef32-49d0-88a8-4332d28866c5)
 
 
  
