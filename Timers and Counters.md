@@ -33,3 +33,32 @@ end
 ```
 ### Output
 ![image](https://github.com/user-attachments/assets/52c0ec3b-736c-46dc-98a2-55cbb0322bd7)
+
+## PWM with ON time of 2 ms and an OFF time of 10 ms on pin P0.0 pin
+### Code
+``` Assembly
+org 0000h
+mov tmod, #10h;
+repeat: 
+setb p0.0
+acall delay
+clr p0.0;
+acall delay
+acall delay
+acall delay
+acall delay
+acall delay
+sjmp repeat
+delay:
+setb tr1
+mov tl1, #30h;
+mov th1, #0f8h;
+wait: jnb tf1, wait;
+clr tr1;
+clr tf1;
+ret
+end
+```
+### Output
+![image](https://github.com/user-attachments/assets/f166b603-b795-4ef3-9118-b860f34926f9)
+
